@@ -1,0 +1,66 @@
+% 
+% PhD Project Protocol
+% Maxime Lavigne
+%
+\documentclass[12pt]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{atbegshi}
+
+% Default, Single Space equals 6 lines per inch exactly.
+\chapterstyle{bringhurst}
+%bringhurst
+%culver
+%komalike
+
+\renewcommand{\clearforchapter}{}
+
+\renewcommand{\section}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\thesection \quad #1}%
+  \vspace{0.25cm}
+  \textbf{\large\thesection.}%
+  \space\nolinebreak \large\textbf{#1}\normalsize \quad}
+
+\begin{document}
+
+\input{titlepage.tex}
+
+\tableofcontents
+\clearpage
+
+\chapter{Introduction}
+\lipsum[1]
+
+\section{test section}
+\lipsum[2]
+
+\chapter{Background \& Rationale}
+\lipsum[1]
+
+\chapter{Research Gaps \& Objectives}
+\lipsum[1]
+
+\chapter{Objective 1}
+\lipsum[1]
+
+\chapter{Objective 2}
+\lipsum[1]
+
+\chapter{Objective 3}
+\lipsum[1]
+
+\chapter{Personal Contributions}
+\lipsum[1]
+
+\chapter{Impacts}
+\lipsum[1]\cite{horvitz2014one}
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{draft.bib}
+
+\end{document}
