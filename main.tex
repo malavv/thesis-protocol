@@ -11,10 +11,11 @@
 \usepackage{atbegshi}
 
 % Default, Single Space equals 6 lines per inch exactly.
-\chapterstyle{bringhurst}
+%\chapterstyle{bringhurst} % -- the real good one
 %bringhurst
 %culver
 %komalike
+\chapterstyle{komalike}
 
 \renewcommand{\clearforchapter}{}
 
@@ -32,35 +33,42 @@
 \tableofcontents
 \clearpage
 
-\chapter{Introduction}
-\lipsum[1]
+\chapter{Introduction and Background}
+\input{01-intro.tex}
 
-\section{test section}
-\lipsum[2]
+\chapter{Evaluation}
+\input{01.5-eval.tex}
 
-\chapter{Background \& Rationale}
-\lipsum[1]
+\chapter{Methods}
+\input{02-methods.tex}
 
-\chapter{Research Gaps \& Objectives}
-\lipsum[1]
+\chapter{Difficulties}
+\input{03-disc.tex}
 
-\chapter{Objective 1}
-\lipsum[1]
+\chapter{Contribution to the Literature}
+\input{04-contr.tex}
 
-\chapter{Objective 2}
-\lipsum[1]
+\chapter{Conclusion}
+\input{05-concl.tex}
 
-\chapter{Objective 3}
-\lipsum[1]
+\chapter{Questions}
+\begin{itemize}
+    \item Can I distinguish between what is done by a trainees/mentor or will this always be under the mentor's name.
+\end{itemize}
 
-\chapter{Personal Contributions}
-\lipsum[1]
-
-\chapter{Impacts}
-\lipsum[1]\cite{horvitz2014one}
+\begin{itemize}
+    \item The written protocol should emphasize the importance of the research objective(s) and the proposed methods for addressing them.
+    \item It should provide sufficient background and detail on data sources; research design, statistical analyses, and power/precision/sample size for each of the research objectives; and study limitations.
+    \item The student should make clear in the protocol text the extent of his or her original contribution to the proposed research, as well as the likely format (“traditional” vs manuscript-based) of the thesis.
+    \item The protocol should be limited to 10 pages (excluding references) on 8.5” X 11” paper in 12-point font and a minimum of 2 cm for all margins on each page.
+    \item To permit adequate space for the methodologic aspects of the proposed research, we strongly suggest that the Background (Introduction) section of the protocol not exceed 2 of the total 10 pages.
+    \item Although students may submit appendices containing tables, figures, equations, or text beyond the 10-page limit, the reviewers are not obligated to read these materials, to avoid advantaging students who submit them or disadvantaging those who do not.
+    \item Thus, all key elements of the proposal should be included within the 10-page limit.
+    \item The full protocol must be sent by e-mail to the course instructors, the external reviewer, and Katherine Hayden no later than 17:00 Eastern time two weeks before the defense date.
+\end{itemize}
 
 \newpage
 \bibliographystyle{plain}
-\bibliography{draft.bib}
+\bibliography{protocol.bib}
 
 \end{document}
