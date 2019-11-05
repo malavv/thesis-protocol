@@ -3,19 +3,23 @@
 % Maxime Lavigne
 %
 \documentclass[12pt]{memoir}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[letterpaper, margin=2cm]{geometry}
 \usepackage{hyperref}
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{atbegshi}
+\usepackage[toc,section=chapter]{glossaries}
+\usepackage{wrapfig}
+\usepackage{todonotes}
+\makeglossary
 
 % Default, Single Space equals 6 lines per inch exactly.
-%\chapterstyle{bringhurst} % -- the real good one
+\chapterstyle{bringhurst} % -- the real good one
 %bringhurst
 %culver
 %komalike
-\chapterstyle{komalike}
+%\chapterstyle{komalike}
 
 \renewcommand{\clearforchapter}{}
 
@@ -26,23 +30,39 @@
   \textbf{\large\thesection.}%
   \space\nolinebreak \large\textbf{#1}\normalsize \quad}
 
+% Disable hskip warning during table of content generation
+\pdfstringdefDisableCommands{%
+  \let\enspace\empty  % this causes the warning for \kern
+  \let\noindent\empty % this causes the warning for \indent
+  \let\hskip\empty
+}
+
+\input{00-glossary.tex}
+
 \begin{document}
+
+\pagestyle{plain}
 
 \input{titlepage.tex}
 
 \tableofcontents
+\thispagestyle{empty}
 \clearpage
 
-\chapter{Introduction and Background}
+\setcounter{page}{1} 
+\chapter{Introduction}
 \input{01-intro.tex}
 
-\chapter{Evaluation}
+\chapter{Research Objectives}
 \input{01.5-eval.tex}
 
-\chapter{Methods}
+\chapter{Background}
+\input{01.6-back.tex}
+
+\chapter{Common Methods}
 \input{02-methods.tex}
 
-\chapter{Difficulties}
+\chapter{Study Limitations ?per objective?}
 \input{03-disc.tex}
 
 \chapter{Contribution to the Literature}
@@ -51,24 +71,18 @@
 \chapter{Conclusion}
 \input{05-concl.tex}
 
-\chapter{Questions}
-\begin{itemize}
-    \item Can I distinguish between what is done by a trainees/mentor or will this always be under the mentor's name.
-\end{itemize}
-
-\begin{itemize}
-    \item The written protocol should emphasize the importance of the research objective(s) and the proposed methods for addressing them.
-    \item It should provide sufficient background and detail on data sources; research design, statistical analyses, and power/precision/sample size for each of the research objectives; and study limitations.
-    \item The student should make clear in the protocol text the extent of his or her original contribution to the proposed research, as well as the likely format (“traditional” vs manuscript-based) of the thesis.
-    \item The protocol should be limited to 10 pages (excluding references) on 8.5” X 11” paper in 12-point font and a minimum of 2 cm for all margins on each page.
-    \item To permit adequate space for the methodologic aspects of the proposed research, we strongly suggest that the Background (Introduction) section of the protocol not exceed 2 of the total 10 pages.
-    \item Although students may submit appendices containing tables, figures, equations, or text beyond the 10-page limit, the reviewers are not obligated to read these materials, to avoid advantaging students who submit them or disadvantaging those who do not.
-    \item Thus, all key elements of the proposal should be included within the 10-page limit.
-    \item The full protocol must be sent by e-mail to the course instructors, the external reviewer, and Katherine Hayden no later than 17:00 Eastern time two weeks before the defense date.
-\end{itemize}
+\printglossary[nonumberlist]
 
 \newpage
 \bibliographystyle{plain}
 \bibliography{protocol.bib}
+
+\appendix
+\addappheadtotoc
+\chapter{Qual Embedded}
+\input{add-qual.tex}
+
+\chapter{Questions}
+\input{questions.tex}
 
 \end{document}
