@@ -12,77 +12,91 @@
 \usepackage[toc,section=chapter]{glossaries}
 \usepackage{wrapfig}
 \usepackage{todonotes}
-\makeglossary
+\usepackage[final]{pdfpages}
 
-% Default, Single Space equals 6 lines per inch exactly.
-\chapterstyle{bringhurst} % -- the real good one
-%bringhurst
-%culver
-%komalike
-%\chapterstyle{komalike}
-
-\renewcommand{\clearforchapter}{}
-
-\renewcommand{\section}[1]{%
-  \refstepcounter{section}%
-  \addcontentsline{toc}{section}{\thesection \quad #1}%
-  \vspace{0.25cm}
-  \textbf{\large\thesection.}%
-  \space\nolinebreak \large\textbf{#1}\normalsize \quad}
-
-% Disable hskip warning during table of content generation
-\pdfstringdefDisableCommands{%
-  \let\enspace\empty  % this causes the warning for \kern
-  \let\noindent\empty % this causes the warning for \indent
-  \let\hskip\empty
-}
-
-\input{00-glossary.tex}
+\input{00.5-config.tex}
+\input{12-glossary.tex}
 
 \begin{document}
 
 \pagestyle{plain}
 
-\input{titlepage.tex}
+\input{00-titlepage.tex}
 
 \tableofcontents
 \thispagestyle{empty}
 \clearpage
+
+% Pages Plan
+% Intro 3/4
+% Goal  1/4        p1
+% Back  1          p2
+% Common Meth. 1/2
+% Data Source 1    p3 p4.5
+% Objective 1 1.5  p4.5 p6
+% Objective 2 1.5  p6 p7.5
+% Objective 3 2    p7.5 p9.5
+% Limitations .5   p10
+% Contribution 3/4 
+% Conclusion 1/4   p11
 
 \setcounter{page}{1} 
 \chapter{Introduction}
 \input{01-intro.tex}
 
 \chapter{Research Objectives}
-\input{01.5-eval.tex}
+\input{02-eval.tex}
 
 \chapter{Background}
-\input{01.6-back.tex}
+\input{03-back.tex}
 
-\chapter{Common Methods}
-\input{02-methods.tex}
+\chapter{Methods}
+\input{04-methods.tex}
 
-\chapter{Study Limitations ?per objective?}
-\input{03-disc.tex}
+\section{Data Source and Characteristics}
+\input{05-data.tex}
+
+%\clearpage
+\chapter{Objective 1: Exploration of Metrics}
+% Develop a set of quality indicators for e-A&F
+\input{06-metrics.tex}
+
+%\clearpage
+\chapter{Objective 2: Usability testing}
+% Lab Usability testing
+\input{07-usability.tex}
+
+%\clearpage
+\chapter{Objective 3: Randomized Evaluation}
+% Randomized Control Trial
+\input{08-rct.tex}
+
+\chapter{Study Limitations}
+\input{09-disc.tex}
 
 \chapter{Contribution to the Literature}
-\input{04-contr.tex}
+\input{10-contr.tex}
 
 \chapter{Conclusion}
-\input{05-concl.tex}
+\input{11-concl.tex}
 
-\printglossary[nonumberlist]
+\printglossary*[nonumberlist]
 
 \newpage
 \bibliographystyle{plain}
 \bibliography{protocol.bib}
 
 \appendix
-\addappheadtotoc
-\chapter{Qual Embedded}
-\input{add-qual.tex}
 
-\chapter{Questions}
-\input{questions.tex}
+\clearpage
+\chapter{Appendix A: TAM2 Questionnaire}
+\includegraphics[trim={25mm 60mm 10mm 0mm}]{pdf/TAM2.pdf}
+
+\clearpage
+\chapter{Appendix B: Sample Size R Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/ss-01.PNG}
+\end{figure}
 
 \end{document}

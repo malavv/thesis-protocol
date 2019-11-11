@@ -1,0 +1,24 @@
+\makeglossary
+
+% Default, Single Space equals 6 lines per inch exactly.
+\chapterstyle{bringhurst} % -- the real good one
+%bringhurst
+%culver
+%komalike
+%\chapterstyle{komalike}
+
+\renewcommand{\clearforchapter}{}
+
+\renewcommand{\section}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\thesection \quad #1}%
+  \vspace{0.25cm}
+  \textbf{\large\thesection.}%
+  \space\nolinebreak \large\textbf{#1}\normalsize \quad}
+
+% Disable hskip warning during table of content generation
+\pdfstringdefDisableCommands{%
+  \let\enspace\empty  % this causes the warning for \kern
+  \let\noindent\empty % this causes the warning for \indent
+  \let\hskip\empty
+}
