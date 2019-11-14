@@ -2,6 +2,7 @@
 In this section, I describe the MUHC \gls{DW}, a newly created repository that centralizes data through daily updates from hospital information system used in most care process at the hospital. The \gls{DW} is intended to support both quality improvement and clinical research and currently includes data from systems such as ADT, MedECHO, the emergency department, medical imaging, and the ICU. Summary counts extracted from the MUHC DW for HF patients and treating physicians are presented in table 4.1.
 
 \begin{table}[h!]
+%\vspace{-2mm}
 \centering
 \begin{tabular}{l|rrrrr}
 \textbf{Year}       & 2014 & 2015 & 2016 & 2017 & 2018   \\
@@ -9,9 +10,10 @@ In this section, I describe the MUHC \gls{DW}, a newly created repository that c
 \textbf{Physicians} & 278 & 278 & 266 & 269 & 265 
 \end{tabular}
 \caption{Counts of HF patients and their physicians, last 5 years, MUHC DW}
+%\vspace{-5mm}
 \end{table}
 
-In preparing my requests for clinical data sets, I have consulted the detailed data dictionary and met with the DW analyst to ensure that necessary data are available. A request will be made to access records for the cohort of adult patients seen in the emergency department or admitted to the intensive care unit, with patients identified using a previously defined set of ICD codes for HF\footnote{From ``Get with the Guidelines - Heart Failure'', from the American Heart Association}.
+I have consulted the detailed data dictionary and met with the DW analyst to ensure that necessary data are available. A request will be made to access records for the cohort of adult patients seen in the emergency department, the ward, or admitted to the intensive care unit, with patients identified using a previously defined set of ICD codes for HF\footnote{From ``Get with the Guidelines - Heart Failure'', from the American Heart Association}.
 
 I will request access to two datasets. An initial request will be made for access to an anonymized data set for objective one and two. A second data request will be made for identifiable data to conduct the RCT. For the trial, identifiable data are needed as I must ensure the each provider sees the right feedback, and these providers must also be able to see which patient might be in need of additional actions. All data collected by the systems will be linked to anonymous IDs. In case where both a resident and an attending physican are assigned to a patient, both will be considered responsible.
 
@@ -25,6 +27,9 @@ All identifiable data will be maintained on a secure server on the MUHC network.
 %  - https://www.heart.org/idc/groups/heart-public/@wcm/@hcm/@gwtg/documents/downloadable/ucm_495599.pdf
 % 3 - What about bringing pleasure is important?
 %  - Slide/a good answer for the difference between playfulness and gamefulness.
+% 4 - What about re-analysis?
+%   You probably don't need to say this, but the usual process is to retain the 'key' that allows records used in the RCT to be re-identified in an secure, offline location for some time after publication in case there is a need to re-examine the data.
 
 % Cut out
+% In preparing my requests for clinical datasets, [consulted]
 % The McGill University Health Centre Data Warehouse (MUHC DW) began in 2012 with an infrastructure   grant from the Canada Foundation for Innovation (CFI). Now, over 7.5 billion facts are accessible in 380 million rows, and over 6,000 columns, in 381 database tables. These data are linked together and organized for analyses of populations, with over 5.5 million health care episodes as of 2019, and is continually growing.
