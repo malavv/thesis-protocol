@@ -44,9 +44,11 @@
 \chapter{Introduction}
 \input{01-intro.tex}
 
+\vspace{0.5cm}
 \chapter{Research Objectives}
 \input{02-eval.tex}
 
+\clearpage
 \chapter{Background}
 \input{03-back.tex}
 
@@ -80,10 +82,10 @@
 \chapter{Conclusion}
 \input{11-concl.tex}
 
-\printglossary*[nonumberlist]
+\printglossary
 
 \newpage
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{protocol.bib}
 
 \appendix
@@ -96,7 +98,7 @@
 \chapter{Appendix B: Sample Size R Code}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{img/ss-01.PNG}
+    \includegraphics[trim={25mm 10mm 10mm 0mm}, height=0.85\textheight]{img/sample-size.png}
 \end{figure}
 
 \end{document}
