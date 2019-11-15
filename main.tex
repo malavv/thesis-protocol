@@ -22,8 +22,8 @@
 \pagestyle{plain}
 
 \input{00-titlepage.tex}
-
-\tableofcontents
+\renewcommand\cftbeforechapterskip{10pt plus 2pt}
+\tableofcontents*
 \thispagestyle{empty}
 \clearpage
 
@@ -72,14 +72,15 @@
 % Randomized Control Trial
 \input{08-rct.tex}
 
+\clearpage
 \chapter{Study Limitations}
 \input{09-disc.tex}
 
 \chapter{Contribution to the Literature}
 \input{10-contr.tex}
 
-\chapter{Conclusion}
-\input{11-concl.tex}
+%\chapter{Conclusion}
+%\input{11-concl.tex}
 
 \printglossary
 
@@ -108,5 +109,23 @@
     \caption{Short description of Campbell's prerequisite \cite{smith2009performance}}
 \end{figure}
 
+\chapter{Appendix D: Data sources at the MUHC data warehouse}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Domain}            & \textbf{System} & \textbf{Description}                                                                                                                                                                                                     \\ \hline
+Index                      & Clinibase CI    & Patient demographic information                                                                                                                                                                                          \\ \hline
+Admission-Départ-Transfert & Clinibase CI    & \begin{tabular}[c]{@{}l@{}}Hospitalizations in short-term and long-term care,\\ including day surgery. Administrative data at the\\ time of admission, movements, and other elements\\  of hospitalization.\end{tabular} \\ \hline
+Urgence                    & Med-Urge        & Detailled information from the ED on patient visits                                                                                                                                                                      \\ \hline
+Archives                   & Med-Echo        & \begin{tabular}[c]{@{}l@{}}Contains clinical-administrative personal information\\  relating to the care and services rendered to a person,\\  admitted or in day surgery\end{tabular}                                   \\ \hline
+APR- DRG                   &                 & \begin{tabular}[c]{@{}l@{}}All Patient Refined Diagnosis related groups, along with\\  other information on resource utilisation\end{tabular}                                                                            \\ \hline
+Imagerie                   & Radimage        & Medical imaging request and results                                                                                                                                                                                      \\ \hline
+Laboratoire                & Cerner          & \begin{tabular}[c]{@{}l@{}}Links analyses from the different medical biology labs\\  and their results with a patient and their stay\end{tabular}                                                                        \\ \hline
+Registre ICU               & Local System    & Clinical condition of patients with stays at the ICU.                                                                                                                                                                    \\ \hline
+\end{tabular}
+\caption{Short description of data sources in the MUHC data warehouse}
+\label{tab:my-table}
+\end{table}
 
 \end{document}
